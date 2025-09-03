@@ -1,0 +1,9 @@
+{
+  "name": "flights-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/flights-e2e/src",
+  "implicitDependencies": ["flights"],
+  "// targets": "to see all targets run: nx show project flights-e2e --web",
+  "targets": {}
+}
