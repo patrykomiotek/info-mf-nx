@@ -1,5 +1,30 @@
 # InfoMfNx
 
+## Backend
+
+Can be splitted to separate Backend for Frontends
+
+1. Run `npm install`
+2. Run `npx nx serve backend`
+3. Open `http://localhost:3002/api/flights
+4. Open Swagger UI `http://localhost:3002/swagger`
+
+## Frontend
+
+1. Run `nx serve cart`
+2. Run `nx serve flights`
+3. Run `nx serve shell`
+3. Open `http://localhost:4200`
+4. Or separate MFs: `http://localhost:4201` (cart), `http://localhost:4202` (flights)
+
+
+## Run many (concurrently)
+
+To run backend, cart, flights and shell concurrently run:
+
+`nx run-many -t serve -p backend cart flights shell`
+
+
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
