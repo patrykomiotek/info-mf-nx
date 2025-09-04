@@ -4,6 +4,8 @@ const config: ModuleFederationConfig = {
   name: 'employees',
   exposes: {
     './Routes': 'apps/employees/src/app/remote-entry/entry.routes.ts',
+    './EmployeesList':
+      'apps/employees/src/app/remote-entry/employees-list.component.ts',
   },
 };
 

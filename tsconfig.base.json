@@ -22,6 +22,9 @@
       "employees/Routes": [
         "apps/employees/src/app/remote-entry/entry.routes.ts"
       ],
+      "employees/EmployeesList": [
+        "apps/employees/src/app/remote-entry/employees-list.component.ts"
+      ],
       "flights/Routes": ["apps/flights/src/app/remote-entry/entry.routes.ts"]
     }
   },
