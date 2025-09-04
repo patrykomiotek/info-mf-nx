@@ -22,7 +22,7 @@ Can be splitted to separate Backend for Frontends
 
 To run backend, cart, flights and shell concurrently run:
 
-`nx run-many -t serve -p backend cart flights shell`
+`nx run-many -t serve -p backend cart flights employees shell`
 
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>

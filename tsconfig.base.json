@@ -19,6 +19,9 @@
       "@info-mf-nx/tim-ui": ["libs/tim-ui/src/index.ts"],
       "@tim-modals": ["libs/tim-modals/src/index.ts"],
       "cart/Routes": ["apps/cart/src/app/remote-entry/entry.routes.ts"],
+      "employees/Routes": [
+        "apps/employees/src/app/remote-entry/entry.routes.ts"
+      ],
       "flights/Routes": ["apps/flights/src/app/remote-entry/entry.routes.ts"]
     }
   },

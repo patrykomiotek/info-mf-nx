@@ -1,0 +1,14 @@
+<div>
+  <h2 class="text-2xl font-bold">Employee List</h2>
+  <div class="mt-4 space-y-4">
+    @for (employee of employees$ | async; track employee.id) {
+    <div class="border border-gray-300 rounded-md p-2 space-y-2">
+      <h3 class="text-lg font-bold">
+        <a [routerLink]="['/employees', employee.id]">{{ employee.firstName }} {{ employee.lastName }}</a>
+      </h3>
+      <p class="text-sm text-gray-500">{{ employee.salary }} zł</p>
+      <!-- <a [routerLink]="['/employees', employee.id]" class="text-blue-500">View Details</a> -->
+    </div>
+    }
+  </div>
+</div>
