@@ -1,5 +1,5 @@
 {
-  "flights": "https://localhost:4201",
-  "cart": "https://localhost:4202",
-  "employees": "https://localhost:4203"
+  "flights": "https://flights-mf-production.up.railway.app",
+  "cart": "https://cart-mf-production.up.railway.app",
+  "employees": "https://employees-mf-production.up.railway.app"
 }
