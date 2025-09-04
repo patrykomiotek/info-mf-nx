@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-// import { NxWelcome } from './nx-welcome';
 import { FlightsListComponent } from './flights-list.component';
 
 @Component({
+  selector: 'info-mf-nx-flights-page',
+  templateUrl: './flights-page.html',
   imports: [FlightsListComponent],
-  selector: 'info-mf-nx-flights-entry',
-  template: `<info-mf-nx-flights-list />`,
 })
-export class RemoteEntry {}
+export class FlightsPageComponent {}
