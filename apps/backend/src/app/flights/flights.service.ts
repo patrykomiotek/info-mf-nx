@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { faker } from '@faker-js/faker';
 
-import { Flight } from './dtos/Flight.dto';
+import { FlightDto } from '@info-mf-nx/contracts';
 
 @Injectable()
 export class FlightsService {
-  private flights: Flight[] = [
+  private flights: FlightDto[] = [
     {
       id: faker.number.int(),
       name: `${faker.location.city()} - ${faker.location.city()}`,

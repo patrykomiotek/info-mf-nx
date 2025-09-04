@@ -3,8 +3,9 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 
+import { FlightDto } from '@info-mf-nx/contracts';
+
 import { FlightsService } from './flights.service';
-import { Flight } from './dtos/Flight.dto';
 import { ReserveFlightComponent } from './reserve-flight.component';
 
 @Component({
@@ -31,7 +32,7 @@ import { ReserveFlightComponent } from './reserve-flight.component';
 export class FlightDetailsComponent {
   private flightsService = inject(FlightsService);
   @Input() flightId!: number;
-  flight$!: Observable<Flight | undefined>;
+  flight$!: Observable<FlightDto | undefined>;
   constructor() {
     effect(() => {
       if (this.flightId) {

@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Flight } from './dtos/Flight.dto';
+import { FlightDto } from '@info-mf-nx/contracts';
 import { API_BASE_URL } from '../consts';
 
 @Injectable({
@@ -11,11 +11,11 @@ import { API_BASE_URL } from '../consts';
 export class FlightsService {
   private http = inject(HttpClient);
 
-  getFlights(): Observable<Flight[]> {
-    return this.http.get<Flight[]>(`${API_BASE_URL}/flights`);
+  getFlights(): Observable<FlightDto[]> {
+    return this.http.get<FlightDto[]>(`${API_BASE_URL}/flights`);
   }
 
-  getFlightById(id: number): Observable<Flight | undefined> {
-    return this.http.get<Flight>(`${API_BASE_URL}/flights/${id}`);
+  getFlightById(id: number): Observable<FlightDto | undefined> {
+    return this.http.get<FlightDto>(`${API_BASE_URL}/flights/${id}`);
   }
 }

@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 
+import { FlightDto } from '@info-mf-nx/contracts';
+
 import { FlightsService } from './flights.service';
-import { Flight } from './dtos/Flight.dto';
 import { ReserveFlightComponent } from './reserve-flight.component';
 
 @Component({
@@ -14,7 +15,7 @@ import { ReserveFlightComponent } from './reserve-flight.component';
 })
 export class FlightsListComponent {
   private flightsService = inject(FlightsService);
-  flights$!: Observable<Flight[]>;
+  flights$!: Observable<FlightDto[]>;
 
   constructor() {
     effect(() => {
