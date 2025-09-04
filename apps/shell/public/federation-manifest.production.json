@@ -1,0 +1,5 @@
+{
+  "flights": "https://localhost:4201",
+  "cart": "https://localhost:4202",
+  "employees": "https://localhost:4203"
+}
