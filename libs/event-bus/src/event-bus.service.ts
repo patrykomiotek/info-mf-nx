@@ -41,6 +41,8 @@ export class EventBusService {
       const infoEvent = event as InfoEvent;
 
       console.log('info event: ', infoEvent);
+      // maybe there is a need to emit
+      this.emitInfoEvent(infoEvent);
     });
   }
 
