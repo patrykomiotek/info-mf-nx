@@ -1,30 +1,29 @@
-import { Component, signal, Type } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgComponentOutlet } from '@angular/common';
-import { ButtonComponent } from '@info-mf-nx/tim-ui';
-import { TimModals } from '@tim-modals';
 
+import { CartStore } from '@info-mf-nx/event-bus';
+
+/**
+ * Shell trzyma wyłącznie ramę: nagłówek, nawigację i licznik koszyka.
+ * Treść przychodzi z mikrofrontendów przez `router-outlet`.
+ *
+ * Licznik nie pyta o nic koszyka ani lotów - jest kolejną projekcją tego
+ * samego strumienia zdarzeń, więc aktualizuje się także wtedy, gdy użytkownik
+ * siedzi na zakładce Flights.
+ */
 @Component({
-  imports: [RouterModule, ButtonComponent, TimModals, NgComponentOutlet],
+  imports: [RouterModule],
   selector: 'info-mf-nx-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'shell';
+  protected readonly cart = inject(CartStore);
 
-  employeeList = signal<Type<unknown> | null>(null);
-
-  constructor() {
-    this.loadEmployeeList();
-  }
-
-  private async loadEmployeeList() {
-    try {
-      const component = await import('employees/EmployeesList');
-      this.employeeList.set(component.EmployeesListComponent);
-    } catch (error) {
-      console.error('Error loading employees list component', error);
-    }
-  }
+  protected readonly nav = [
+    { path: '/', label: 'Home' },
+    { path: '/flights', label: 'Flights' },
+    { path: '/cart', label: 'Cart' },
+    { path: '/employees', label: 'Employees' },
+  ] as const;
 }

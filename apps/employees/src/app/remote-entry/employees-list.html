@@ -1,14 +1,21 @@
-<div>
-  <h2 class="text-2xl font-bold">Employee List</h2>
-  <div class="mt-4 space-y-4">
+<section class="space-y-4">
+  <h2 class="text-lg font-semibold text-slate-900">Employee List</h2>
+
+  <ul class="space-y-2">
     @for (employee of employees$ | async; track employee.id) {
-    <div class="border border-gray-300 rounded-md p-2 space-y-2">
-      <h3 class="text-lg font-bold">
-        <a [routerLink]="['/employees', employee.id]">{{ employee.firstName }} {{ employee.lastName }}</a>
-      </h3>
-      <p class="text-sm text-gray-500">{{ employee.salary }} zł</p>
-      <!-- <a [routerLink]="['/employees', employee.id]" class="text-blue-500">View Details</a> -->
-    </div>
+      <li
+        class="flex items-center justify-between gap-4 rounded-md border
+               border-slate-200 bg-white px-3 py-2"
+      >
+        <a
+          [routerLink]="['/employees', employee.id]"
+          class="font-medium text-slate-900 underline-offset-4 hover:underline"
+          >{{ employee.firstName }} {{ employee.lastName }}</a
+        >
+        <span class="text-sm text-slate-500">{{ employee.salary }} zł</span>
+      </li>
+    } @empty {
+      <li class="text-sm text-slate-400">Brak pracowników.</li>
     }
-  </div>
-</div>
+  </ul>
+</section>

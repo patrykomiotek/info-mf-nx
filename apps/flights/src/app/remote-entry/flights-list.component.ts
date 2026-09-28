@@ -1,5 +1,5 @@
-import { Component, effect, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -8,18 +8,14 @@ import { FlightDto } from '@info-mf-nx/contracts';
 import { FlightsService } from './flights.service';
 import { ReserveFlightComponent } from './reserve-flight.component';
 
+/** Patrz komentarz w `employees-list.component.ts` - ten sam błąd z `effect()`. */
 @Component({
   selector: 'info-mf-nx-flights-list',
-  imports: [CommonModule, RouterLink, ReserveFlightComponent],
+  imports: [AsyncPipe, RouterLink, ReserveFlightComponent],
   templateUrl: './flight-list.html',
 })
 export class FlightsListComponent {
-  private flightsService = inject(FlightsService);
-  flights$!: Observable<FlightDto[]>;
+  readonly #flightsService = inject(FlightsService);
 
-  constructor() {
-    effect(() => {
-      this.flights$ = this.flightsService.getFlights();
-    });
-  }
+  readonly flights$: Observable<FlightDto[]> = this.#flightsService.getFlights();
 }
