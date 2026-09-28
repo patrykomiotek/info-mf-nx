@@ -12,12 +12,4 @@ export const remoteRoutes: Route[] = [
       ),
     title: 'Flight Details',
   },
-  {
-    path: 'flights/:flightId', // standalone MF
-    loadComponent: () =>
-      import('./flight-details.component').then(
-        (m) => m.FlightDetailsComponent
-      ),
-    title: 'Flight Details',
-  },
 ];
